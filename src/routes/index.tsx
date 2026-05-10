@@ -10,7 +10,7 @@ const POSTER_URL = `${SITE_URL}${poster}`;
 const TRAILER_URL = "https://www.youtube.com/watch?v=BbUx334038U";
 const TITLE = "Sègilolá (The Villain) — In Cinemas Nationwide May 1, 2026";
 const DESCRIPTION =
-  "A Stranger Rises. A Tyrant Strikes. A Kingdom Trembles. Sègilolá (The Villain), a FM Destiny Production, arrives in cinemas nationwide May 1, 2026. Starring Ibrahim Chatta, 9ice, Odunlade Adekola and Bimbo Akintola.";
+  "A Stranger Rises. A Tyrant Strikes. A Kingdom Trembles. Sègilolá (The Villain), an FM Destiny Productions film, arrives in cinemas nationwide May 1, 2026. Starring Ibrahim Chatta, 9ice, Odunlade Adekola and Bimbo Akintola.";
 
 const movieJsonLd = {
   "@context": "https://schema.org",
@@ -60,7 +60,7 @@ export const Route = createFileRoute("/")({
       {
         name: "keywords",
         content:
-          "Segilola, Segilola The Villain, Sègilolá, Yoruba movie 2026, Nollywood epic, Ibrahim Chatta, 9ice, Odunlade Adekola, FM Destiny Productions, Nile Entertainment, May 1 2026",
+          "Segilola, Segilola The Villain, Sègilolá, Yorùbá movie 2026, Nollywood epic, Ibrahim Chatta, 9ice, Odunlade Adekola, FM Destiny Productions, Nile Entertainment, May 1 2026",
       },
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { name: "theme-color", content: "#1a0a0a" },
@@ -266,9 +266,7 @@ function Landing() {
               style={{ animationDelay: "1.4s" }}
             >
               <a
-                href="https://www.youtube.com/watch?v=BbUx334038U"
-                target="_blank"
-                rel="noreferrer"
+                href="#trailer"
                 className="inline-flex items-center gap-3 bg-gradient-gold text-primary-foreground font-semibold px-7 py-3.5 rounded-full hover-soft animate-soft-glow shadow-lg shadow-gold/20"
               >
                 <Play className="w-5 h-5 fill-current" /> Watch Trailer
@@ -289,7 +287,7 @@ function Landing() {
                 <Clock className="w-4 h-4 text-gold" /> 2h 00m
               </span>
               <span className="flex items-center gap-2">
-                <Globe className="w-4 h-4 text-gold" /> Yoruba (Eng. Subs)
+                <Globe className="w-4 h-4 text-gold" /> Yorùbá (Eng. Subs)
               </span>
             </div>
           </div>
@@ -309,7 +307,7 @@ function Landing() {
             An empire on fire.
           </h2>
           <p className="text-lg md:text-xl text-foreground/80 leading-relaxed font-light">
-            In the rich, textured backdrop of precolonial Yorùbáland, a ruthless and wealthy woman
+            In the rich, textured backdrop of pre-colonial Yorùbáland, a ruthless and wealthy woman
             named <span className="text-gold">Sègilolá</span> sets her sights on a powerful man over
             a personal grudge. As her obsession unravels the peace of a quiet village, loyalties
             fracture, secrets surface, and a looming threat emerges from the shadows.

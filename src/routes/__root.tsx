@@ -78,7 +78,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Sègilolá (The Villain), a FM Destiny Production. In cinemas nationwide May 1, 2026.",
+          "Sègilolá (The Villain), an FM Destiny Productions film. In cinemas nationwide May 1, 2026.",
       },
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { name: "theme-color", content: "#1a0a0a" },
