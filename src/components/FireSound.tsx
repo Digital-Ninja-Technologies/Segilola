@@ -86,6 +86,7 @@ function startFire(ctx: AudioContext): Engine {
 export function FireSound() {
   const [on, setOn] = useState(false);
   const engine = useRef<Engine | null>(null);
+  const button = useRef<HTMLButtonElement>(null);
 
   const stop = () => {
     const e = engine.current;
@@ -99,12 +100,21 @@ export function FireSound() {
 
   useEffect(() => stop, []);
 
-  const toggle = () => {
-    if (on) {
-      stop();
-      setOn(false);
-      return;
-    }
+  // Browsers only allow audio after a user gesture, so start on the first click
+  // (or tap/keypress) anywhere. Clicks on the button itself are left to toggle().
+  useEffect(() => {
+    const begin = (e: Event) => {
+      if (button.current?.contains(e.target as Node)) return;
+      removeListeners();
+      if (!engine.current) play();
+    };
+    const events = ["pointerdown", "keydown"] as const;
+    const removeListeners = () => events.forEach((n) => window.removeEventListener(n, begin));
+    events.forEach((n) => window.addEventListener(n, begin));
+    return removeListeners;
+  }, []);
+
+  const play = () => {
     const Ctx =
       window.AudioContext ??
       (window as unknown as { webkitAudioContext?: typeof AudioContext }).webkitAudioContext;
@@ -115,8 +125,18 @@ export function FireSound() {
     setOn(true);
   };
 
+  const toggle = () => {
+    if (on) {
+      stop();
+      setOn(false);
+    } else {
+      play();
+    }
+  };
+
   return (
     <button
+      ref={button}
       type="button"
       onClick={toggle}
       aria-pressed={on}
