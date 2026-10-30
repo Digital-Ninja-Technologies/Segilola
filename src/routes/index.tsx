@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import poster from "@/assets/segilola-poster.jpg";
 import { Play, Ticket, Calendar, Clock, Globe, MapPin } from "lucide-react";
 import { useScrollReveal } from "@/hooks/use-scroll-reveal";
+import { FireSound } from "@/components/FireSound";
 
 const SITE_URL =
   import.meta.env.VITE_SITE_URL?.replace(/\/$/, "") ??
@@ -165,6 +166,7 @@ function Landing() {
   const embers = Array.from({ length: 28 });
   return (
     <main className="min-h-screen bg-background text-foreground font-sans overflow-x-hidden">
+      <FireSound />
       {/* HERO */}
       <section className="relative min-h-screen bg-cinematic bg-grain bg-vignette overflow-hidden">
         {/* faded poster watermark */}
